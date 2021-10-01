@@ -1,0 +1,105 @@
+.admin_container {
+    display: flex;
+}
+
+.contact_left {
+    flex: 1;
+    margin-right: 0,1rem;
+}
+
+.contact_number {
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5rem;
+    margin: 0.5rem;
+}
+
+.title_text {
+    color: #5F9EA0;
+    font-size: 2rem;
+}
+
+.contact_add {
+    background-color: #F5F5F5;
+    margin: 0.5rem;
+}
+
+.contact_right {
+    flex: 2;
+}
+
+.contact_info {
+    background-color: #F5F5F5;
+    margin: 0.5rem;
+    overflow: scroll;
+    padding: 0.5rem;
+    height: 40%;
+}
+
+.contact_add_info {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    height: 100%;
+}
+
+.contact_perso {
+    border: 1px solid rgba(128, 128, 128, 0.39);
+    margin: 0.3rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.contact_title {
+    color: #5F9EA0;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.input_contact_style {
+    border: 1px solid rgba(128, 128, 128, 0.39);    
+    color: grey;
+}
+
+.ctg {
+    color: grey;
+}
+
+.space {
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+}
+
+.button_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_admin_style {
+    width: 8rem;
+    height: 2rem;
+    border-radius: 5rem;
+    border: 1px solid #5F9EA0;
+    color: #5F9EA0;
+    margin: 1rem;
+}
+
+.button_admin_style:hover {
+    border: 1px solid white;
+    color: white;
+    background-color: #5F9EA0;
+}
+
+.grey_text {
+    color: grey;
+};
+
+.grey_text_name {
+    color: grey;
+    font-weight: bold;
+};
