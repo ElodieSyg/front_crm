@@ -2,4 +2,10 @@
   padding: 0;
   margin: 0;
   box-sizing: 0;
+} 
+
+@font-face {
+  font-family: "Raleway";
+  src: url(../public/font/Raleway/Raleway-Italic-VariableFont_wght.ttf),
+      url(../public/font/Raleway/Raleway-VariableFont_wght.ttf);
 }

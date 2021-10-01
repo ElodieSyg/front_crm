@@ -35,7 +35,7 @@
     margin: 0.5rem;
     overflow: scroll;
     padding: 0.5rem;
-    height: 40%;
+    height: 70%;
 }
 
 .contact_add_info {
@@ -51,6 +51,7 @@
     padding: 0.5rem;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .contact_title {
@@ -97,9 +98,39 @@
 
 .grey_text {
     color: grey;
-};
+}
 
 .grey_text_name {
     color: grey;
     font-weight: bold;
-};
+}
+
+.contact_modif {
+    background-color: #F5F5F5;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+
+.padding_contact {
+    padding: 0.5rem;
+    border: 1px solid rgba(128, 128, 128, 0.39);
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_flexbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.info_title_text {
+    font-weight: bold;
+}
+
+.image_flexbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

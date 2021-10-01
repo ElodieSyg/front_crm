@@ -18,6 +18,7 @@ const Admin = () => {
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState(0);
     const [getInfo, setGetInfo] = useState(false);
+    const [contactSelected, setContactSelected] = useState(null);
     const [error, setError] = useState(null);
 
     useEffect(() => {
@@ -27,9 +28,10 @@ const Admin = () => {
                 { withCredentials: true },
             );
             setData(res.data.data)
+            console.log(res.data.data)
         };
         fetchDatabase();
-    });
+    }, []);
 
     const saveNameValue = (e) => {
         setName(e.target.value);
@@ -64,9 +66,11 @@ const Admin = () => {
         fetchDatabase();
     };
 
-    const handleClickMoreInfo = () => {
+    const handleClickMoreInfo = (contact) => {
         console.log("handleclick")
-        setGetInfo(!getInfo)
+        setGetInfo(!getInfo);
+        console.log(contact);
+        setContactSelected(contact);
     };
 
     return (
@@ -92,10 +96,14 @@ const Admin = () => {
                             <button className="button_admin_style" onClick={handleClickNewClient}>Create a new client</button>
                         </div>
                     </div>
+                    <div className="image_flexbox">
+                        <img src="./img/undraw_software.png" alt="software_logo" width="500px" />
+                    </div>
                 </div>
 
                 <div className="contact_right">
                     <div className="contact_info">
+                        <p className="contact_title">Contact list</p>
                         {data.map(contact => (
                             <div key={uuidv4()} className="contact_perso">
                                 <div>
@@ -103,13 +111,31 @@ const Admin = () => {
                                     <p className="grey_text">{contact.email}</p>
                                 </div>
                                 <div>
-                                    <button className="button_admin_style" onClick={handleClickMoreInfo}>More info</button>
+                                    <button id={data.id} className="button_admin_style" onClick={() => handleClickMoreInfo(contact)}>More info</button>
                                 </div>
                             </div>
                         ))}
                     </div>
-                    <div>
-                        {getInfo ? <div>true</div> : <div>false</div>}
+                    <div className="contact_modif">
+                        {
+                            contactSelected &&
+                            <div className="ctg padding_contact">
+                                <div>
+                                    <p className="info_title_text">Name</p>
+                                    <p>{contactSelected.name}</p>
+                                    <p className="info_title_text">Email</p>
+                                    <p>{contactSelected.email}</p>
+                                    <p className="info_title_text">Description</p>
+                                    <p>{contactSelected.description}</p>
+                                    <p className="info_title_text">Category</p>
+                                    <p>{contactSelected.category}</p>
+                                </div>
+                                <div className="button_flexbox">
+                                    <button className="button_admin_style">modify</button>
+                                    <button className="button_admin_style">delete</button>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
